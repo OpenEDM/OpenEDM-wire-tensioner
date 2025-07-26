@@ -16,8 +16,6 @@ First, this is how the wire runs:
 
 Next, let's take a look at the wire tensioner's main components:
 
-![](https://github.com/OpenEDM/.github/blob/main/images/wire_tensioner_main_components.png)
-
 Let's list all the main components:
 
 - (1) - Input wire feeder
@@ -30,7 +28,7 @@ Let's list all the main components:
 
 ### Input wire feeder
 
-TODO
+![](https://github.com/OpenEDM/.github/blob/main/images/input_wire_feeder_details.png)
 
 ### Output wire feeder
 
