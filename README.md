@@ -16,4 +16,26 @@ First, this is how the wire runs:
 
 Next, let's take a look at the wire tensioner's main components:
 
+![](https://github.com/OpenEDM/.github/blob/main/images/wire_tensioner_main_components.png)
+
+Let's list all the main components:
+
+- (1) - Input wire feeder
+- (2, 3) - Frame
+- (4, 7) - Top and bottom wire contacts
+- (5, 6) - Top and bottom wire guides
+- (8) - Output wire feeder
+- (9) - Electronic control unit
+- (10) - Load cell assembly
+
+### Input wire feeder
+
+TODO
+
+### Output wire feeder
+
+TODO
+
+### Load cell assembly
+
 TODO
