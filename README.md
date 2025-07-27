@@ -1,6 +1,6 @@
 # OpenEDM-wire-tensioner
 
-This repository contains the design of the **Wire tensioning mechanism**, in particular, hardware design and firmware. Note that this design is a work in progress, it is not complete, and may contain errors
+This repository contains the design of the **Wire Tensioning Mechanism**, in particular, hardware design and firmware. Note that this design is a work in progress, it is not complete, and may contain errors
 
 Currently, the electronic hardware is assembled from heavily customized standard modules, as shown in the image below. An integrated hardware design is available in the [Hardware](https://github.com/OpenEDM/OpenEDM-wire-tensioner/tree/main/Hardware) directory, but it is still in the early stages of development
 
@@ -28,8 +28,8 @@ To understand how this feeder works, let's look at how the wire is loaded into i
 
 Some important points:
 1. This feeder operates based on the [capstan effect](https://en.wikipedia.org/wiki/Capstan_equation)
-2. Regarding the latches: the latches (1.1) and (1.4) are structurally identical. The latch (1.1) is shown in the closed position in the picture above, while latch (1.4) is shown open. A closed latch significantly hinders the wire from passing through but does not block its movement completely
-3. For the feeder to operate correctly, the motor must rotate only clockwise, and there must always be some tension in the wire after the output latch (1.4)
+1. For the feeder to operate correctly, the motor must rotate only clockwise, and there must always be some tension in the wire after the output latch (1.4)
+1. Regarding the latches: the latches (1.1) and (1.4) are structurally identical. The latch (1.1) is shown in the closed position in the picture above, while latch (1.4) is shown open. A closed latch significantly hinders the wire from passing through but does not block its movement completely
 
 ### Output wire feeder
 
