@@ -8,6 +8,13 @@ The mechanical design of the wire tensioner is available as a part of the [OpenE
 
 ![](https://github.com/OpenEDM/.github/blob/main/images/wire_tensioner.png)
 
+## Main design requirements
+
+The wire tensioning mechanism must fulfill two main tasks:
+
+1. Ensure that the wire in the cutting zone is fed according to the speed setpoint set by the user
+2. Ensure that the wire in the cutting zone is tensioned according to the tension setpoint set by the user
+
 ## Operation principle
 
 First, this is how the wire runs. On the right side (not shown in the photo) is the wire source; for example, a spool with new wire. On the left side (also not shown in the photo) is the location where the used wire is directed. This could be a spool for collecting the used wire, or a mechanism that cuts the wire into small pieces for convenient disposal:
@@ -19,6 +26,8 @@ Next, let's take a look at the wire tensioner's main components:
 ![](https://github.com/OpenEDM/.github/blob/main/images/wire_tensioner_main_components.png/)
 
 The wire enters the system through the **input wire feeder** (1). Then it passes around several passive pulleys. Next, the wire goes through the **wire guides** (6, 5). The **wire contacts** (7, 4), located near the wire guides, supply electricity to the wire. After that, the wire wraps around the last passive pulley, which is a part of the **load cell assembly** (10). Finally, the wire exits the system through the **output wire feeder** (8). All components are mounted on a frame, which consists of an **aluminum part** (2) and a **plastic part** (3). The system is controlled by an **electronic control unit** (9)
+
+There is an important design constraint for the input feeder: it must not deform the wire in any way, meaning it must not alter the shape of wire's cross-section. This constraint does not apply to the output feeder
 
 ### Input wire feeder
 
@@ -36,5 +45,9 @@ Some important points:
 TODO
 
 ### Load cell assembly
+
+TODO
+
+### Control system operation algorithm
 
 TODO
