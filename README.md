@@ -27,6 +27,8 @@ Next, let's take a look at the wire tensioner's main components:
 
 The wire enters the system through the **input wire feeder** (1). Then it passes around several passive pulleys. Next, the wire goes through the **wire guides** (6, 5). The **wire contacts** (7, 4), located near the wire guides, supply electricity to the wire. After that, the wire wraps around the last passive pulley, which is a part of the **load cell assembly** (10). Finally, the wire exits the system through the **output wire feeder** (8). All components are mounted on a frame, which consists of an **aluminum part** (2) and a **plastic part** (3). The system is controlled by an **electronic control unit** (9)
 
+The system operates in such a way that the output feeder pulls the wire, while the input feeder, when necessary, slows the wire's movement by acting as a brake. The operation of the motors depends on the setpoints for speed and tension, as well as on the feedback signal from the load cell. More details are provided below
+
 There is an important design constraint for the input feeder: it must not deform the wire in any way, meaning it must not alter the shape of wire's cross-section. This constraint does not apply to the output feeder
 
 ### Input wire feeder
