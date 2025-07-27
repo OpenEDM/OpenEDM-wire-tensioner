@@ -1,10 +1,10 @@
 # OpenEDM-wire-tensioner
 
-This repository contains the design of the **Wire Tensioning Mechanism**, in particular, hardware design and firmware. Note that this design is a work in progress, it is not complete, and may contain errors
+This repository contains the design of the **Wire Tensioning Mechanism**, in particular, hardware design and firmware. Note that this design is a work in progress, it is not complete, and may contain errors.
 
-Currently, the electronic hardware is assembled from heavily customized standard modules, as shown in the image below. An integrated hardware design is available in the [Hardware](https://github.com/OpenEDM/OpenEDM-wire-tensioner/tree/main/Hardware) directory, but it is still in the early stages of development
+Currently, the electronic hardware is assembled from heavily customized standard modules, as shown in the image below. An integrated hardware design is available in the [Hardware](https://github.com/OpenEDM/OpenEDM-wire-tensioner/tree/main/Hardware) directory, but it is still in the early stages of development.
 
-The mechanical design of the wire tensioner is available as a part of the [OpenEDM-wire-machine design](https://github.com/OpenEDM/OpenEDM-wire-machine)
+The mechanical design of the wire tensioner is available as a part of the [OpenEDM-wire-machine design](https://github.com/OpenEDM/OpenEDM-wire-machine).
 
 ![](https://github.com/OpenEDM/.github/blob/main/images/wire_tensioner.png)
 
@@ -12,8 +12,8 @@ The mechanical design of the wire tensioner is available as a part of the [OpenE
 
 The wire tensioning mechanism must fulfill two main tasks:
 
-1. Ensure that the wire in the cutting zone is fed according to the speed setpoint set by the user
-2. Ensure that the wire in the cutting zone is tensioned according to the tension setpoint set by the user
+1. Ensure that the wire in the cutting zone is fed according to the speed setpoint set by the user.
+2. Ensure that the wire in the cutting zone is tensioned according to the tension setpoint set by the user.
 
 ## Operation principle
 
@@ -25,55 +25,63 @@ Next, let's take a look at the wire tensioner's main components:
 
 ![](https://github.com/OpenEDM/.github/blob/main/images/wire_tensioner_main_components.png/)
 
-The wire enters the system through the **input wire feeder** (1). Then it passes around several passive pulleys. Next, the wire goes through the **wire guides** (6, 5). The **wire contacts** (7, 4), located near the wire guides, supply electricity to the wire. After that, the wire wraps around the last passive pulley, which is a part of the **load cell assembly** (10). Finally, the wire exits the system through the **output wire feeder** (8). All components are mounted on a frame, which consists of an **aluminum part** (2) and a **plastic part** (3). The system is controlled by an **electronic control unit** (9)
+The wire enters the system through the **input wire feeder** (1). Then it passes around several passive pulleys. Next, the wire goes through the **wire guides** (6, 5). The **wire contacts** (7, 4), located near the wire guides, supply electricity to the wire. After that, the wire wraps around the last passive pulley, which is a part of the **load cell assembly** (10). Finally, the wire exits the system through the **output wire feeder** (8). All components are mounted on a frame, which consists of an **aluminum part** (2) and a **plastic part** (3). The system is controlled by an **electronic control unit** (9).
 
-The system operates in such a way that the output feeder pulls the wire, while the input feeder, when necessary, slows the wire's movement by acting as a brake. The operation of the motors depends on the setpoints for speed and tension, as well as on the feedback signal from the load cell. More details are provided below
+The system operates in such a way that the output feeder pulls the wire, while the input feeder, when necessary, slows the wire's movement by acting as a brake. The operation of the motors depends on the setpoints for speed and tension, as well as on the feedback signal from the load cell. More details are provided below.
 
-There is an important design constraint for the input feeder: it must not deform the wire in any way, meaning it must not alter the shape of wire's cross-section. This constraint does not apply to the output feeder
+There is an important design constraint for the input feeder: it must not deform the wire in any way, meaning it must not alter the shape of wire's cross-section. This constraint does not apply to the output feeder.
 
 ### Input wire feeder
 
 ![](https://github.com/OpenEDM/.github/blob/main/images/input_wire_feeder_details.png)
 
-To understand how this feeder works, let's look at how the wire is loaded into it. The wire enters the feeder through a PTFE tube connected to the **input fitting** (1.2). About one meter of wire should be pulled out from the tube, then placed into the groove of the **input latch** (1.1), and the latch should be closed. Next, the wire should be wrapped 4–5 times clockwise around the **pulley** (1.3). It doesn't matter if the loops are placed randomly; during operation, the feeder will self-correct their position. After that, without releasing the tension on the wire, the wire should be placed into the groove of the **output latch** (1.4) and the latch should be closed
+To understand how this feeder works, let's look at how the wire is loaded into it. The wire enters the feeder through a PTFE tube connected to the **input fitting** (1.2). About one meter of wire should be pulled out from the tube, then placed into the groove of the **input latch** (1.1), and the latch should be closed. Next, the wire should be wrapped 4–5 times clockwise around the **pulley** (1.3). It doesn't matter if the loops are placed randomly; during operation, the feeder will self-correct their position. After that, without releasing the tension on the wire, the wire should be placed into the groove of the **output latch** (1.4) and the latch should be closed.
 
 Some important points:
-1. This feeder operates based on the [capstan effect](https://en.wikipedia.org/wiki/Capstan_equation)
-1. For the feeder to operate correctly, the motor must rotate only clockwise, and there must always be some tension in the wire after the output latch
-1. Regarding the latches: the input and output latches are structurally identical. The input latch is shown in the closed position in the picture above, while the output latch is shown open. A closed latch significantly hinders the wire from passing through but does not block its movement completely
+1. This feeder operates based on the [capstan effect](https://en.wikipedia.org/wiki/Capstan_equation).
+1. For the feeder to operate correctly, the motor must rotate only clockwise, and there must always be some tension in the wire after the output latch.
+1. Regarding the latches: the input and output latches are structurally identical. The input latch is shown in the closed position in the picture above, while the output latch is shown open. A closed latch significantly hinders the wire from passing through but does not block its movement completely.
 
 ### Output wire feeder
 
 ![](https://github.com/OpenEDM/.github/blob/main/images/output_wire_feeder_details.png)
 
-In this feeder, the main components are the pulleys, between which the wire is clamped. **Active puley** (8.6) is mounted directly on the motor shaft. **Passive puley** (8.7) is mounted on the **lever** (8.1) which rotates around the **axis** (8.3). Both pulleys have toothed rims that provide a kinematic connection between them. A **spring** (8.4), which presses against the **stop** (8.5), applies force to the lever, pushing the pulleys together and ensuring that the wire clamped between them cannot slip
+In this feeder, the main components are the pulleys, between which the wire is clamped. **Active puley** (8.6) is mounted directly on the motor shaft. **Passive puley** (8.7) is mounted on the **lever** (8.1) which rotates around the **axis** (8.3). Both pulleys have toothed rims that provide a kinematic connection between them. A **spring** (8.4), which presses against the **stop** (8.5), applies force to the lever, pushing the pulleys together and ensuring that the wire clamped between them cannot slip.
 
-Again, let’s look at how the wire is loaded into this feeder. First, the lever (8.1) must be pressed to create a gap between pulleys (8.6) and (8.7). Then, the wire should be inserted into the hole marked with a red arrow. After that, the wire should pass between the pulleys and exit through the **output fitting** (8.2). Finally, the lever should be released so that the wire is clamped between the pulleys
+Again, let’s look at how the wire is loaded into this feeder. First, the lever (8.1) must be pressed to create a gap between pulleys (8.6) and (8.7). Then, the wire should be inserted into the hole marked with a red arrow. After that, the wire should pass between the pulleys and exit through the **output fitting** (8.2). Finally, the lever should be released so that the wire is clamped between the pulleys.
 
 The main feature of this design is the construction of the pulleys. The pulleys must meet the following key requirements:
 
-1. The surface that comes into contact with the wire must be hard enough so that the wire does not leave marks or cause deformation
-1. The pulleys must have an integrated toothed rim
+1. The surface that comes into contact with the wire must be hard enough so that the wire does not leave marks or cause deformation.
+1. The pulleys must have an integrated toothed rim.
 
 If the pulleys were made entirely of metal, manufacturing them would be a complex and costly task. However, a workaround was found that significantly simplifies the situation and reduces the cost. Each pulley is an assembly of three components:
 
-1. An **outer bushing** (8.6.3) and an **inner bushing** (8.6.1). These bushings must be made of steel. However, due to their simple geometry, they can easily be sourced as off-the-shelf parts
-1. An **intermediate bushing** (8.6.2) with an integrated toothed rim. This bushing can simply be 3D-printed from a sufficiently strong plastic, such as ABS
+1. An **outer bushing** (8.6.3) and an **inner bushing** (8.6.1). These bushings must be made of steel. However, due to their simple geometry, they can easily be sourced as off-the-shelf parts.
+1. An **intermediate bushing** (8.6.2) with an integrated toothed rim. This bushing can simply be 3D-printed from a sufficiently strong plastic, such as ABS.
 
-All three bushings -- outer, inner, and intermediate -- are press-fitted into one another. Of course, the dimensions of the plastic bushing must be chosen carefully to ensure a tight fit. This solution has been tested and has proven to work reliably in practice
+All three bushings -- outer, inner, and intermediate -- are press-fitted into one another. Of course, the dimensions of the plastic bushing must be chosen carefully to ensure a tight fit. This solution has been tested and has proven to work reliably in practice.
 
-Another interesting aspect is the placement of the spring. It is easy to notice that the design of this feeder resembles that of a standard 3D printer extruder, for example, like [this one](https://youtu.be/zdTyMRBLIl4?t=35). However, in a typical 3D printer extruder, the spring is usually located inside, between the levers. In this design, the spring is placed on the outside
+Another interesting aspect is the placement of the spring. It is easy to notice that the design of this feeder resembles that of a standard 3D printer extruder, for example, like [this one](https://youtu.be/zdTyMRBLIl4?t=35). However, in a typical 3D printer extruder, the spring is usually located inside, between the levers. In this design, the spring is placed on the outside.
 
-The reason for this is that, for the feeder to work reliably, the pulleys axes must remain parallel, even when the spring applies significant pressure to the moving lever. Experiments have shown that the design with an externally mounted spring performs better in this regard
+The reason for this is that, for the feeder to work reliably, the pulleys axes must remain parallel, even when the spring applies significant pressure to the moving lever. Experiments have shown that the design with an externally mounted spring performs better in this regard.
 
 ### Load cell assembly
 
 ![](https://github.com/OpenEDM/.github/blob/main/images/load_cell_assy_details.png)
 
-There is nothing particularly special about this part of the design. The **load cell** (10.2) is mounted on the wire tensioner frame using a **plastic holder** (10.1). The **passive pulley** (10.3) is attached to the load cell via another **plastic holder** (10.4)
+There is nothing particularly special about this part of the design. The **load cell** (10.2) is mounted on the wire tensioner frame using a **plastic holder** (10.1). The **passive pulley** (10.3) is attached to the load cell via another **plastic holder** (10.4).
 
-The only noteworthy detail here is that the cable connecting the load cell to the electronic control unit is shielded, and the shield is electrically connected to the load cell beam. Often, the load cell beam is made of anodized aluminum, which prevents proper electrical contact; therefore, the anodized layer must be locally removed before connecting the cable shield to the beam
+The only noteworthy detail here is that the cable connecting the load cell to the electronic control unit is shielded, and the shield is electrically connected to the load cell beam. Often, the load cell beam is made of anodized aluminum, which prevents proper electrical contact; therefore, the anodized layer must be locally removed before connecting the cable shield to the beam.
 
 ### Control system operation algorithm
 
-TODO
+The current firmware version is located in the [corresponding folder](https://github.com/OpenEDM/OpenEDM-wire-tensioner/tree/main/Firmware). Below is a brief description of how it works:
+
+Immediately after power is applied, the device performs a tare operation on the load cell. At this point, it is assumed that the wire is already loaded into the system. The input motor does not rotate. The output motor rotates in reverse to reduce the wire tension in the system. This reverse motion continues until the reading from the load cell stops changing. After that, the load cell is tared, and the device enters normal operation mode.
+
+During normal operation, the following occurs:
+
+1. The speed of the input motor depends only on the wire feed rate setpoint.
+1. The speed of the output motor is controlled by a PID regulator, which receives the tension error as input -- that is, the difference between the actual tension (measured by the load cell) and the target tension set by the user.
+1. The motors operate only if the output of the load cell exceeds a threshold value (by default, 500 grams). If the load cell reads below this threshold, it most likely indicates a broken wire, and the motors remain stopped.
