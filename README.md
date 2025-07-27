@@ -62,6 +62,10 @@ If the pulleys were made entirely of metal, manufacturing them would be a comple
 
 All three bushings -- outer, inner, and intermediate -- are press-fitted into one another. Of course, the dimensions of the plastic bushing must be chosen carefully to ensure a tight fit. This solution has been tested and has proven to work reliably in practice
 
+Another interesting aspect is the placement of the spring. It is easy to notice that the design of this feeder resembles that of a standard 3D printer extruder, for example, like [this one](https://youtu.be/zdTyMRBLIl4?t=35). However, in a typical 3D printer extruder, the spring is usually located inside, between the levers. In this design, the spring is placed on the outside
+
+The reason for this is that, for the feeder to work reliably, the pulleys axes must remain parallel, even when the spring applies significant pressure to the moving lever. Experiments have shown that the design with an externally mounted spring performs better in this regard
+
 ### Load cell assembly
 
 TODO
