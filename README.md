@@ -39,12 +39,28 @@ To understand how this feeder works, let's look at how the wire is loaded into i
 
 Some important points:
 1. This feeder operates based on the [capstan effect](https://en.wikipedia.org/wiki/Capstan_equation)
-1. For the feeder to operate correctly, the motor must rotate only clockwise, and there must always be some tension in the wire after the output latch (1.4)
-1. Regarding the latches: the latches (1.1) and (1.4) are structurally identical. The latch (1.1) is shown in the closed position in the picture above, while latch (1.4) is shown open. A closed latch significantly hinders the wire from passing through but does not block its movement completely
+1. For the feeder to operate correctly, the motor must rotate only clockwise, and there must always be some tension in the wire after the output latch
+1. Regarding the latches: the input and output latches are structurally identical. The input latch is shown in the closed position in the picture above, while the output latch is shown open. A closed latch significantly hinders the wire from passing through but does not block its movement completely
 
 ### Output wire feeder
 
-TODO
+![](https://github.com/OpenEDM/.github/blob/main/images/output_wire_feeder_details.png)
+
+In this feeder, the main components are the pulleys, between which the wire is clamped. **Active puley** (8.6) is mounted directly on the motor shaft. **Passive puley** (8.7) is mounted on the **lever** (8.1) which rotates around the **axis** (8.3). Both pulleys have toothed rims that provide a kinematic connection between them. A **spring** (8.4), which presses against the **stop** (8.5), applies force to the lever, pushing the pulleys together and ensuring that the wire clamped between them cannot slip
+
+Again, let’s look at how the wire is loaded into this feeder. First, the lever (8.1) must be pressed to create a gap between pulleys (8.6) and (8.7). Then, the wire should be inserted into the hole marked with a red arrow. After that, the wire should pass between the pulleys and exit through the **output fitting** (8.2). Finally, the lever should be released so that the wire is clamped between the pulleys
+
+The main feature of this design is the construction of the pulleys. The pulleys must meet the following key requirements:
+
+1. The surface that comes into contact with the wire must be hard enough so that the wire does not leave marks or cause deformation
+1. The pulleys must have an integrated toothed rim
+
+If the pulleys were made entirely of metal, manufacturing them would be a complex and costly task. However, a workaround was found that significantly simplifies the situation and reduces the cost. Each pulley is an assembly of three components:
+
+1. An **outer bushing** (8.6.3) and an **inner bushing** (8.6.1). These bushings must be made of steel. However, due to their simple geometry, they can easily be sourced as off-the-shelf parts
+1. An **intermediate bushing** (8.6.2) with an integrated toothed rim. This bushing can simply be 3D-printed from a sufficiently strong plastic, such as ABS
+
+All three bushings -- outer, inner, and intermediate -- are press-fitted into one another. Of course, the dimensions of the plastic bushing must be chosen carefully to ensure a tight fit. This solution has been tested and has proven to work reliably in practice
 
 ### Load cell assembly
 
