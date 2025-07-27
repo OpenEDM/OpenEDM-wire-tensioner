@@ -68,7 +68,11 @@ The reason for this is that, for the feeder to work reliably, the pulleys axes m
 
 ### Load cell assembly
 
-TODO
+![](https://github.com/OpenEDM/.github/blob/main/images/load_cell_assy_details.png)
+
+There is nothing particularly special about this part of the design. The **load cell** (10.2) is mounted on the wire tensioner frame using a **plastic holder** (10.1). The **passive pulley** (10.3) is attached to the load cell via another **plastic holder** (10.4)
+
+The only noteworthy detail here is that the cable connecting the load cell to the electronic control unit is shielded, and the shield is electrically connected to the load cell beam. Often, the load cell beam is made of anodized aluminum, which prevents proper electrical contact; therefore, the anodized layer must be locally removed before connecting the cable shield to the beam
 
 ### Control system operation algorithm
 
